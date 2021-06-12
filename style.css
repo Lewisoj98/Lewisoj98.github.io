@@ -112,7 +112,6 @@ header {
     padding: 1rem;
     margin-left:5rem;
     text-align: center;
-    clip-path: polygon(50% 0%, 100% 0px, 100% 0%, 50% 100vh, 0px 0%, 0px 0px);
     background: var(--jet);
     color: var(--light-text);
     height: 100vh;
@@ -196,7 +195,7 @@ label {
     height: 2rem;
     width: 2rem;
     color: var(--glaucous);
-    padding: 0 auto;
+    padding: 5rem 2.5rem;
 }
 
 .icons {
@@ -210,6 +209,7 @@ label {
 #about, #skills, #contact, #projects {
     height: 100vh;
 }
+
 
 /* Media Queries */
 
@@ -237,6 +237,10 @@ label {
         margin: 0;
     }
 
+    header {
+        clip-path: unset;
+    }
+
     footer {
         margin-bottom:6rem;
     }
@@ -244,7 +248,6 @@ label {
 
 @media only screen and (min-width: 600px) {
 .navbar {
-    
     top: 0;
     width: 5rem;
     height: 100vh;
@@ -257,5 +260,9 @@ label {
 .navbar:hover .link-text {
     display: inline;
     justify-content: center;
+}
+
+header {
+    clip-path: polygon(50% 0%, 100% 0px, 100% 0%, 50% 100vh, 0px 0%, 0px 0px);
 }
 }
