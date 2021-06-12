@@ -12,15 +12,14 @@
     --form-bg: rgba(125, 132, 145, .1);
     --speed: 400ms;
 
-    scroll-behavior: smooth;
 }
 
 body {
     padding: 0;
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    
 }
+section div { text-align: right;}
 /* side-nav */
 .navbar {
     position: fixed;
@@ -81,8 +80,6 @@ body {
     letter-spacing: 0.3ch;
     width: 100%;
 }
-
-
 
 .nav-link:hover {
     background: var(--text);
@@ -169,7 +166,7 @@ fieldset {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    border: 1px solid var(--roman-silver);
+    border: 1px solid #f2f2f4;
     background: var(--form-bg);
 }
 
