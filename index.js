@@ -20,4 +20,9 @@ $(document).ready(()=>{
             scrollTop: $('#contact').offset().top
         }, 'slow')
     })
+    $('a[href="#"]').click(()=>{
+        $('html,body').animate({
+            scrollTop: $('body').offset().top
+        }, 'slow')
+    })
 })
