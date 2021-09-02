@@ -102,7 +102,7 @@ main, footer {
     margin-left: 5rem;
 }
 
-header {
+header:not([class]) {
     padding: 1rem;
     margin-left: 5rem;
     text-align: center;
@@ -115,6 +115,75 @@ header {
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    position: relative;
+    animation: move 2s;
+}
+
+header {
+    position: relative;
+    animation: move 2s;
+
+}
+
+/* Skill Cards */
+.card-list {
+    display: flex;
+    padding: 3rem;
+    /* overflow-x: scroll; */
+}
+
+.card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 350px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+}
+
+.card:hover~.card {
+    transform: translateX(130px);
+}
+
+.card:not(:first-child) {
+    margin-left: -130px;
+}
+
+.half-circle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 48px;
+    fill: none;
+    stroke: #ff8a00;
+    stroke-width: 8;
+    stroke-linecap: round;
+}
+
+.card-header h2:hover {
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-header p {
+    color: #fff;
+}
+
+.card-header h2 {
+    color: #fff;
 }
 
 /* Contact Form */
@@ -213,14 +282,14 @@ section div h2, .aboutme-cv {
 
 .aboutme-cv a {
     background-color: var(--amber-sae-ece);
-    padding:1rem 2rem;
+    padding: 1rem 2rem;
     text-decoration: none;
     color: var(--nav-text);
     border-radius: 10px;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2.75rem;
 }
 
 h1 {
@@ -229,6 +298,55 @@ h1 {
 
 .aboutme-text {
     font-size: 2.1rem;
+}
+
+.animate {
+    position:relative;
+    animation: move 3s;
+}
+
+@-webkit-keyframes move {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes move {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes move {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    from {
+        top: -200px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
 }
 
 /* Media Queries */
@@ -258,11 +376,9 @@ h1 {
     footer {
         margin-bottom: 6rem;
     }
-    
     .aboutme-cv {
         text-align: center;
     }
-
     .aboutme-text {
         margin: 0;
         padding-bottom: 3rem;
@@ -283,7 +399,7 @@ h1 {
         display: inline;
         justify-content: center;
     }
-    header {
+    header:not([class]) {
         clip-path: polygon(50% 0%, 100% 0px, 100% 0%, 50% 100vh, 0px 0%, 0px 0px);
     }
     .aboutme-text {

@@ -26,3 +26,12 @@ $(document).ready(()=>{
         }, 'slow')
     })
 })
+
+$(window).scroll(function () {
+    if($(window).scrollTop() > 0) {
+        $('#about').addClass("animate");
+    }
+    else {
+        $('#about').removeClass("animate");
+    }
+})
