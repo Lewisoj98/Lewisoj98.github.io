@@ -8,8 +8,10 @@
     --glaucous: #6279B8;
     --light-cyan: #DDFFF7;
     --light-text: #bdbcbc;
-    --form-bg: rgba(125, 132, 145, .1);
-    --speed: 400ms;
+    --form-bg: #f2f2f4;
+    --white: #fff;
+    --card-og: #17141d;
+    --speed: .5s;
 }
 
 body {
@@ -40,7 +42,7 @@ body {
     width: 100%;
 }
 
-.nav-item:last-child {
+.nav-item:last-child, .project-btn {
     margin-top: auto;
 }
 
@@ -102,15 +104,6 @@ main, footer {
     margin-left: 5rem;
 }
 
-header:not([class]) {
-    padding: 1rem;
-    margin-left: 5rem;
-    text-align: center;
-    background: var(--jet);
-    color: var(--light-text);
-    height: 100vh;
-}
-
 #profile-picture {
     height: 200px;
     width: 200px;
@@ -119,71 +112,44 @@ header:not([class]) {
     animation: move 2s;
 }
 
+header:not([class]) {
+    padding: 1rem;
+    text-align: center;
+    background: var(--jet);
+    color: var(--light-text);
+    height: 100vh;
+}
+
 header {
     position: relative;
     animation: move 2s;
-
 }
 
 /* Skill Cards */
+
 .card-list {
-    display: flex;
     padding: 3rem;
-    /* overflow-x: scroll; */
 }
 
 .card {
     display: flex;
-    position: relative;
     flex-direction: column;
-    height: 350px;
-    width: 400px;
+    position: relative;
     min-width: 250px;
     padding: 1.5rem;
     border-radius: 16px;
-    background: #17141d;
-    box-shadow: -1rem 0 3rem #000;
+    background: var(--form-bg);
+    box-shadow: -1rem 0 3rem var(--text);
     transition: .2s;
 }
 
-.card:hover {
-    transform: translateY(-1rem);
-}
-
-.card:hover~.card {
-    transform: translateX(130px);
-}
-
-.card:not(:first-child) {
-    margin-left: -130px;
-}
-
-.half-circle {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 48px;
-    fill: none;
-    stroke: #ff8a00;
-    stroke-width: 8;
-    stroke-linecap: round;
-}
-
-.card-header h2:hover {
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
-    text-shadow: none;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 .card-header p {
-    color: #fff;
+    color: var(--text);
 }
 
-.card-header h2 {
-    color: #fff;
+.card-header h2, .content {
+    margin: 0;
+    color: var(--text);
 }
 
 /* Contact Form */
@@ -274,6 +240,18 @@ label {
     justify-content: center;
 }
 
+/* Projects */
+.project-btn {
+    background-color: var(--amber-sae-ece);
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+}
+
 /* Main Body */
 
 section div h2, .aboutme-cv {
@@ -301,7 +279,7 @@ h1 {
 }
 
 .animate {
-    position:relative;
+    position: relative;
     animation: move 3s;
 }
 
@@ -372,6 +350,7 @@ h1 {
     }
     header {
         clip-path: unset;
+        margin-left: 0;
     }
     footer {
         margin-bottom: 6rem;
@@ -384,6 +363,38 @@ h1 {
         padding-bottom: 3rem;
         text-align: center;
     }
+    .card {
+        margin-bottom: -260px;
+        height: 300px;
+    }
+
+    .card-header {
+        margin-top: 0;
+    }
+
+    .card-header h2 {
+        font-size: 2rem;
+    }
+    
+    .content .project-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .card-list {
+        display: block;
+    }
+    .card:hover {
+        transform: translateY(-130px)
+    }
+    .card:hover~.card {
+        transform: translateY(130px);
+    }
+
+    #projects {
+        margin-top: 260px;
+    }
+    
 }
 
 @media only screen and (min-width: 600px) {
@@ -400,10 +411,27 @@ h1 {
         justify-content: center;
     }
     header:not([class]) {
+        margin-left: 5rem;
         clip-path: polygon(50% 0%, 100% 0px, 100% 0%, 50% 100vh, 0px 0%, 0px 0px);
     }
     .aboutme-text {
         margin: 0 20rem;
         padding-bottom: 3rem;
+    }
+    .card {
+        height: 350px;
+        width: 400px;
+    }
+    .card-list {
+        display: flex;
+    }
+    .card:hover {
+        transform: translateY(-1rem);
+    }
+    .card:hover~.card {
+        transform: translateX(130px);
+    }
+    .card:not(:first-child) {
+        margin-left: -130px;
     }
 }

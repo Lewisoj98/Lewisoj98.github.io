@@ -35,3 +35,7 @@ $(window).scroll(function () {
         $('#about').removeClass("animate");
     }
 })
+
+$('.card').on('touchstart', function() {
+    this.toggleClass(":hover");
+})
